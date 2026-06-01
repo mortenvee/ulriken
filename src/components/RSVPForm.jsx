@@ -98,6 +98,7 @@ export default function RSVPForm({ onAdminClick }) {
   return (
     <div className="form-container">
       <div className="hero">
+        <p className="hero-eyebrow">Navnefest</p>
         <h1 className="hero-name">Ulrik Brurok Vee</h1>
         <p className="hero-details">
           16. august • Villa Holtet • 13:00
@@ -120,9 +121,8 @@ export default function RSVPForm({ onAdminClick }) {
       <Gallery />
 
       <div className="info-note">
-        <h3>Tilreisende? 🧳</h3>
         <p>
-          Kommer du reisende utenfor Oslo? Vi anbefaler{' '}
+          Vi anbefaler{' '}
           <a
             href="https://www.google.com/maps/search/?api=1&query=Scandic+Helsfyr"
             target="_blank"
@@ -130,7 +130,6 @@ export default function RSVPForm({ onAdminClick }) {
           >
             Scandic Helsfyr
           </a>
-          , da dette er i området vi bor.
         </p>
       </div>
 

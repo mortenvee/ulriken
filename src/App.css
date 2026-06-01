@@ -49,11 +49,11 @@ body {
 .hero-eyebrow {
   font-family: var(--sans);
   text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 13px;
+  letter-spacing: 8px;
+  font-size: clamp(20px, 4vw, 28px);
   font-weight: 500;
   color: var(--gold-deep);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .hero-name {
