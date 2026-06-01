@@ -101,9 +101,23 @@ export default function RSVPForm({ onAdminClick }) {
         <p className="hero-eyebrow">Velkommen til navnefest for</p>
         <h1 className="hero-name">Ulrik Brurok Vee</h1>
         <p className="hero-details">
-          16. august • Villa Holtet • 13:00 – 17:00
+          16. august • Villa Holtet • 13:00
         </p>
         <Countdown />
+      </div>
+
+      <div className="welcome">
+        <p className="welcome-lead">
+          Velkommen til navnefest for Ulrik Brurok Vee!
+        </p>
+        <p>
+          Vi samles på Villa Holtet lørdag 16. august kl. 13:00, og nyter dagen
+          så lenge vi vil.
+        </p>
+        <p>Det blir mat, familie og venner, og kanskje litt underholdning.</p>
+        <p>
+          Svar på forhånd om du kommer, så vi vet hvor mange vi er.
+        </p>
       </div>
 
       <Gallery />
