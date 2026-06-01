@@ -114,7 +114,7 @@ export default function RSVPForm({ onAdminClick }) {
         <p className="welcome-lead">Velkommen til navnefest!</p>
         <p>
           Vi har gleden av å invitere til navnefest for Ulrik på Villa Holtet
-          lørdag 16. august kl. 13.00.
+          søndag 16. august kl. 13.00.
         </p>
         <p>
           Denne dagen ønsker vi å samle venner og familie for å feire Ulrik med
