@@ -119,6 +119,21 @@ export default function RSVPForm({ onAdminClick }) {
 
       <Gallery />
 
+      <div className="info-note">
+        <h3>Tilreisende? 🧳</h3>
+        <p>
+          Kommer du reisende utenfor Oslo? Vi anbefaler{' '}
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Scandic+Helsfyr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Scandic Helsfyr
+          </a>
+          , da dette er i området vi bor.
+        </p>
+      </div>
+
       <div className="form-card">
         <h2 className="card-title">Gi oss beskjed om du kommer 💌</h2>
 
