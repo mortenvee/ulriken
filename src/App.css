@@ -124,6 +124,12 @@ body {
   margin-bottom: 0;
 }
 
+.welcome-deadline {
+  color: var(--gold-deep) !important;
+  font-style: italic;
+  margin-top: 22px;
+}
+
 /* Countdown */
 .countdown {
   display: flex;

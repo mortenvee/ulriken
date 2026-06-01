@@ -111,20 +111,24 @@ export default function RSVPForm({ onAdminClick }) {
       </div>
 
       <div className="welcome">
-        <p className="welcome-lead">Velkommen!</p>
+        <p className="welcome-lead">Velkommen til navnefest!</p>
         <p>
-          Vi samles på Villa Holtet lørdag 16. august kl. 13:00, og nyter dagen
-          så lenge vi vil.
+          Vi har gleden av å invitere til navnefest for Ulrik på Villa Holtet
+          lørdag 16. august kl. 13.00.
         </p>
-        <p>Det blir mat, familie og venner, og kanskje litt underholdning.</p>
         <p>
-          Svar på forhånd om du kommer, så vi vet hvor mange vi er.
+          Denne dagen ønsker vi å samle venner og familie for å feire Ulrik med
+          god mat, kaker og hyggelig samvær. Kanskje dukker det også opp litt
+          underholdning underveis.
         </p>
+        <p>Vi håper dere har anledning til å komme og dele dagen med oss.</p>
+        <p className="welcome-deadline">Svarfrist: 30. juni.</p>
       </div>
 
       <Gallery />
 
       <div className="info-note">
+        <p>For dere som reiser til Oslo:</p>
         <p>
           Vi anbefaler{' '}
           <a
