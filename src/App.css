@@ -43,7 +43,15 @@ body {
 /* Hero */
 .hero {
   text-align: center;
-  padding: 36px 12px 4px;
+  padding: 12px 12px 4px;
+}
+
+.hero-illustration {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto 4px;
+  mix-blend-mode: multiply;
 }
 
 .hero-eyebrow {

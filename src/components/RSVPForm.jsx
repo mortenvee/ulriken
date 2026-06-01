@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase'
 import Countdown from './Countdown'
 import Gallery from './Gallery'
 import LocationMap from './LocationMap'
+import headerImg from '../assets/header/header.png'
 
 function fireConfetti() {
   const end = Date.now() + 800
@@ -98,8 +99,11 @@ export default function RSVPForm({ onAdminClick }) {
   return (
     <div className="form-container">
       <div className="hero">
-        <p className="hero-eyebrow">Navnefest</p>
-        <h1 className="hero-name">Ulrik Brurok Vee</h1>
+        <img
+          className="hero-illustration"
+          src={headerImg}
+          alt="Navnefest for Ulrik"
+        />
         <p className="hero-details">
           16. august • Villa Holtet • 13:00
         </p>
