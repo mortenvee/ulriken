@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* RSVP Form */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.form-card h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.event-details {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+form button[type='submit'] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 10px;
+}
+
+form button[type='submit']:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+form button[type='submit']:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-card .admin-button {
+  background: #f0f0f0;
+  color: #666;
+  font-size: 12px;
+  padding: 8px;
+  margin-top: 20px;
+}
+
+.form-card .admin-button:hover {
+  background: #e0e0e0;
+}
+
+/* PIN Entry */
+.pin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.pin-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.pin-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.pin-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pin-card input {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.pin-card input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.pin-card button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pin-card button[type='submit'] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.pin-card button[type='submit']:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.pin-card .cancel {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.pin-card .cancel:hover {
+  background: #e0e0e0;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Messages */
+.success-message,
+.error-message {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.success-message {
+  background: #c8e6c9;
+  color: #2e7d32;
+}
+
+.error-message {
+  background: #ffcdd2;
+  color: #c62828;
+}
+
+/* Admin View */
+.admin-container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.admin-header h1 {
+  color: #333;
+  font-size: 28px;
+}
+
+.logout-button {
+  background: #f0f0f0;
+  color: #666;
+  padding: 10px 20px;
+  width: auto;
+}
+
+.logout-button:hover {
+  background: #e0e0e0;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Responses Section */
+.responses-section {
+  margin-top: 30px;
+}
+
+.responses-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  padding: 40px 20px;
+}
+
+.responses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.response-item {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.response-item.attending {
+  border-left: 5px solid #4caf50;
+  background: #f1f8f6;
+}
+
+.response-item.not-attending {
+  border-left: 5px solid #ff9800;
+  background: #fef7f0;
+}
+
+.response-content {
+  flex: 1;
+}
+
+.response-item h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.response-item p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.response-date {
+  color: #999;
+  font-size: 12px;
+  margin-top: 10px !important;
+}
+
+.delete-button {
+  background: #ffcdd2;
+  color: #c62828;
+  padding: 8px 15px;
+  width: auto;
+  font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.delete-button:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-card,
+  .admin-card,
+  .pin-card {
+    padding: 25px;
+  }
+
+  .form-card h1 {
+    font-size: 24px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .logout-button {
+    align-self: flex-end;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .response-item {
+    flex-direction: column;
+  }
+
+  .delete-button {
+    width: 100%;
+  }
+}
