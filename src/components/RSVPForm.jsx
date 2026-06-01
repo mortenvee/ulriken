@@ -106,9 +106,7 @@ export default function RSVPForm({ onAdminClick }) {
       </div>
 
       <div className="welcome">
-        <p className="welcome-lead">
-          Velkommen til navnefest for Ulrik Brurok Vee!
-        </p>
+        <p className="welcome-lead">Velkommen!</p>
         <p>
           Vi samles på Villa Holtet lørdag 16. august kl. 13:00, og nyter dagen
           så lenge vi vil.

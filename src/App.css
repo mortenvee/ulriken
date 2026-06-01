@@ -106,8 +106,9 @@ body {
 }
 
 .welcome p {
-  font-size: 19px;
-  line-height: 1.75;
+  font-family: var(--serif);
+  font-size: 23px;
+  line-height: 1.55;
   margin-bottom: 14px;
 }
 
