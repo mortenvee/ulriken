@@ -98,7 +98,6 @@ export default function RSVPForm({ onAdminClick }) {
   return (
     <div className="form-container">
       <div className="hero">
-        <p className="hero-eyebrow">Velkommen til navnefest for</p>
         <h1 className="hero-name">Ulrik Brurok Vee</h1>
         <p className="hero-details">
           16. august • Villa Holtet • 13:00
