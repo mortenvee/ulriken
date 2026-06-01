@@ -1,5 +1,31 @@
 import { useState } from 'react'
+import confetti from 'canvas-confetti'
 import { supabase } from '../lib/supabase'
+import Countdown from './Countdown'
+import Gallery from './Gallery'
+import LocationMap from './LocationMap'
+
+function fireConfetti() {
+  const end = Date.now() + 800
+  const colors = ['#667eea', '#764ba2', '#f9a826', '#ffffff']
+  ;(function frame() {
+    confetti({
+      particleCount: 4,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors,
+    })
+    confetti({
+      particleCount: 4,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors,
+    })
+    if (Date.now() < end) requestAnimationFrame(frame)
+  })()
+}
 
 export default function RSVPForm({ onAdminClick }) {
   const [formData, setFormData] = useState({
@@ -50,6 +76,7 @@ export default function RSVPForm({ onAdminClick }) {
         setError('Kunne ikke lagre svar. Prøv igjen.')
         console.error(insertError)
       } else {
+        if (formData.attending === 'yes') fireConfetti()
         setSuccessMessage('Takk for tilbakemelding!')
         setFormData({
           name: '',
@@ -58,7 +85,7 @@ export default function RSVPForm({ onAdminClick }) {
           children: '0',
           allergies: '',
         })
-        setTimeout(() => setSuccessMessage(''), 3000)
+        setTimeout(() => setSuccessMessage(''), 4000)
       }
     } catch (err) {
       setError('En feil oppstod. Prøv igjen.')
@@ -70,11 +97,19 @@ export default function RSVPForm({ onAdminClick }) {
 
   return (
     <div className="form-container">
-      <div className="form-card">
-        <h1>🎉 Navnefest for Ulrik Brurok Vee</h1>
-        <p className="event-details">
-          16. august • Villa Holtet • 13:00 - 17:00
+      <div className="hero">
+        <p className="hero-eyebrow">Velkommen til navnefest for</p>
+        <h1 className="hero-name">Ulrik Brurok Vee</h1>
+        <p className="hero-details">
+          16. august • Villa Holtet • 13:00 – 17:00
         </p>
+        <Countdown />
+      </div>
+
+      <Gallery />
+
+      <div className="form-card">
+        <h2 className="card-title">Gi oss beskjed om du kommer 💌</h2>
 
         {successMessage && (
           <div className="success-message">{successMessage}</div>
@@ -154,11 +189,15 @@ export default function RSVPForm({ onAdminClick }) {
             {isSubmitting ? 'Lagrer...' : 'Send svar'}
           </button>
         </form>
-
-        <button className="admin-button" onClick={onAdminClick}>
-          Admin
-        </button>
       </div>
+
+      <div className="form-card">
+        <LocationMap />
+      </div>
+
+      <button className="admin-button" onClick={onAdminClick}>
+        Admin
+      </button>
     </div>
   )
 }

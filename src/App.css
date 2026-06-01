@@ -16,7 +16,7 @@ body {
 .app {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
 }
 
@@ -24,6 +24,165 @@ body {
 .form-container {
   width: 100%;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  color: white;
+  padding: 20px 10px 0;
+}
+
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero-details {
+  font-size: 17px;
+  font-weight: 500;
+  opacity: 0.95;
+  margin-bottom: 28px;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.countdown-unit {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 14px 8px;
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-value {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+.countdown-done {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Gallery */
+.gallery {
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-main img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  overflow-x: auto;
+}
+
+.gallery-thumb {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+.gallery-thumb.active {
+  border-color: #667eea;
+  opacity: 1;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-placeholder {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+
+.card-title {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Map */
+.map-section h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.map-embed {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.directions-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.directions-link:hover {
+  text-decoration: underline;
 }
 
 .form-card {
@@ -110,16 +269,16 @@ form button[type='submit']:disabled {
   cursor: not-allowed;
 }
 
-.form-card .admin-button {
-  background: #f0f0f0;
-  color: #666;
+.admin-button {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 12px;
   padding: 8px;
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.form-card .admin-button:hover {
-  background: #e0e0e0;
+.admin-button:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* PIN Entry */
