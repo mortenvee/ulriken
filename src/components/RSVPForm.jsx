@@ -122,7 +122,6 @@ export default function RSVPForm({ onAdminClick }) {
           underholdning underveis.
         </p>
         <p>Vi håper dere har anledning til å komme og dele dagen med oss.</p>
-        <p className="welcome-deadline">Svarfrist: 30. juni.</p>
       </div>
 
       <Gallery />
