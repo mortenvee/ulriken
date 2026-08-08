@@ -520,6 +520,11 @@ form button[type='submit']:disabled {
   font-weight: 600;
 }
 
+.admin-actions {
+  display: flex;
+  gap: 10px;
+}
+
 .logout-button {
   background: transparent;
   color: var(--ink-soft);
@@ -531,6 +536,22 @@ form button[type='submit']:disabled {
 .logout-button:hover {
   background: rgba(176, 141, 87, 0.1);
   color: var(--ink);
+}
+
+.export-button {
+  background: var(--ink);
+  color: #f6efe3;
+  padding: 10px 20px;
+  width: auto;
+}
+
+.export-button:hover:not(:disabled) {
+  background: var(--gold-deep);
+}
+
+.export-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Stats Grid */

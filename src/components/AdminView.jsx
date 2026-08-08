@@ -90,6 +90,52 @@ export default function AdminView({ onLogout }) {
     }
   }
 
+  const escapeCsv = (value) => {
+    const str = String(value ?? '')
+    if (/[",\n;]/.test(str)) {
+      return `"${str.replace(/"/g, '""')}"`
+    }
+    return str
+  }
+
+  const exportCsv = () => {
+    const headers = [
+      'Navn',
+      'Status',
+      'Voksne',
+      'Barn',
+      'Allergier',
+      'Sendt inn',
+    ]
+    const rows = responses.map((r) => [
+      r.name,
+      r.attending ? 'Kommer' : 'Kommer ikke',
+      r.attending ? r.adults : '',
+      r.attending ? r.children : '',
+      r.allergies || '',
+      new Date(r.created_at).toLocaleString('no-NO'),
+    ])
+
+    const csv = [headers, ...rows]
+      .map((row) => row.map(escapeCsv).join(','))
+      .join('\n')
+
+    // BOM så Excel viser æøå riktig
+    const blob = new Blob(['﻿' + csv], {
+      type: 'text/csv;charset=utf-8;',
+    })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `gjesteliste-ulrik-${new Date()
+      .toISOString()
+      .slice(0, 10)}.csv`
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+  }
+
   if (loading) {
     return (
       <div className="admin-container">
@@ -105,9 +151,18 @@ export default function AdminView({ onLogout }) {
       <div className="admin-card">
         <div className="admin-header">
           <h1>📋 Admin Panel</h1>
-          <button onClick={onLogout} className="logout-button">
-            Logg ut
-          </button>
+          <div className="admin-actions">
+            <button
+              onClick={exportCsv}
+              className="export-button"
+              disabled={responses.length === 0}
+            >
+              Last ned CSV
+            </button>
+            <button onClick={onLogout} className="logout-button">
+              Logg ut
+            </button>
+          </div>
         </div>
 
         {error && <div className="error-message">{error}</div>}
