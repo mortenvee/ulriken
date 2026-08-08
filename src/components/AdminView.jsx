@@ -117,7 +117,7 @@ export default function AdminView({ onLogout }) {
     ])
 
     const csv = [headers, ...rows]
-      .map((row) => row.map(escapeCsv).join(','))
+      .map((row) => row.map(escapeCsv).join(';'))
       .join('\n')
 
     // BOM så Excel viser æøå riktig
